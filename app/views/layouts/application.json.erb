@@ -1,0 +1,6 @@
+<% @success = true if @success.nil? %>
+{
+  "success": <%= @success.to_json.html_safe %>,
+  "error": <%= @error.to_json.html_safe %>,
+  "data": <%= @success ? yield : nil.to_json %>
+}
